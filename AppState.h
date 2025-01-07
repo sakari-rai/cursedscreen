@@ -41,7 +41,7 @@ private:
         fvec2_t pos;
         fvec2_t vel;
         char pixel;
-        int size;
+        float size;
         
         void update(irect2_t bounds);
         fvec2_t get_pos() const;
@@ -49,7 +49,7 @@ private:
         std::array<fvec2_t, 3> get_vertices(float rotation = 0.0f, const fvec2_t& translation = {0.0f, 0.0f}) const;
     };
     
-    static const int NUMBER_OF_MOVING_PARTS = 16;
+    static const int NUMBER_OF_MOVING_PARTS = 32;
     
     std::array<MovingPart, NUMBER_OF_MOVING_PARTS> m_moving_parts;
     

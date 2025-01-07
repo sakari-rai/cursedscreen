@@ -113,15 +113,16 @@ fvec2_t AppState::MovingPart::get_pos() const {
 void AppState::initialize_moving_parts(irect2_t bounds) {
     for (auto& part : m_moving_parts) {
         part.pos = fvec2_t{random() * bounds.width(), random() * bounds.height()};
-
-        part.vel = fvec2_t{random() * 10 - 5, random() * 10 - 5};
+        part.vel = fvec2_t{random() * 2.0f - 1.0f, random() * 2.0f - 1.0f};
         
         // ensure velocity is not zero
         if (part.vel.isZero()) {
             part.vel = fvec2_t{1, 1};
         }
+        
+        part.size = random() * 3.0f + 1.0f;
 
-        part.pixel = '#'; //random_char(".,-~:;=!*#$@");
+        part.pixel = '#';
     }
 }
 
@@ -136,6 +137,7 @@ std::array<fvec2_t, 3> AppState::MovingPart::get_vertices(float rotation, const 
 
     // rotate the vertices by the given angle using fvec2_t rotation methods
     for (auto& vertex : vertices) {
+        vertex *= size;
         vertex.rotate(rotation);
         vertex += translation;
     }
