@@ -1,6 +1,6 @@
 # Cursed Screen Animation
 
-This project is a fun animation program written in C++ using the ncurses library. The program displays moving parts as triangles that bounce around the screen.
+Non-interactive terminal demo application written in C++ using Curses (PDCurses on Windows). The program displays moving parts as triangles that bounce around the screen.
 
 ## Features
 
@@ -13,31 +13,33 @@ This project is a fun animation program written in C++ using the ncurses library
 ### Prerequisites
 
 - C++ compiler (e.g., g++)
-- ncurses library
+- CMake
+- ncurses library (PDCurses on Windows)
 
 ### Building
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
-    cd YOUR_REPOSITORY_NAME
+    git clone https://github.com/sakari-rai/cursedscreen.git
+    cd cursedscreen 
     ```
 
-2. Build the project:
+2. Configure and Build the project:
     ```sh
-    g++ -o cursed_screen main.cpp AppState.cpp FrameBuffer.cpp -lncurses
+    cmake -S . -B build
+    cmake --build build
     ```
 
 ### Running
 
 Run the program:
 ```sh
-./cursed_screen
+./build/cursed_screen
 ```
 
 ## Acknowledgements
 
-This program was written with the help of GitHub Copilot.
+This program was the product of testing the free Github Copilot VSCode integration. It was fun and amazing.
 
 ## License
 
