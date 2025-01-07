@@ -44,7 +44,7 @@ private:
         int size;
         
         void update(irect2_t bounds);
-        fvec2_t get_scaled_pos() const;
+        fvec2_t get_pos() const;
         
         std::array<fvec2_t, 3> get_vertices(float rotation = 0.0f, const fvec2_t& translation = {0.0f, 0.0f}) const;
     };

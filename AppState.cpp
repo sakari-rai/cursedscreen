@@ -46,7 +46,7 @@ void AppState::render() {
     for (const auto& part : m_moving_parts) {
         // calculate velocity angle using atan2
         const float angle = std::atan2(part.vel.y, part.vel.x);
-        auto vertices = part.get_vertices(angle, part.get_scaled_pos());
+        auto vertices = part.get_vertices(angle, part.get_pos());
         m_fb->draw_filled_triangle(vertices[0].to_ivec2(), vertices[1].to_ivec2(), vertices[2].to_ivec2(), part.pixel);
     }
     
@@ -105,7 +105,7 @@ void AppState::MovingPart::update(irect2_t bounds) {
     }
 }
 
-fvec2_t AppState::MovingPart::get_scaled_pos() const {
+fvec2_t AppState::MovingPart::get_pos() const {
     return pos;
 }
 
