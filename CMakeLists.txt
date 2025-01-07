@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 if(MSVC)
-    set(CMAKE_PREFIX_PATH D:/programming/LIBS/PDCurses)
+    set(CMAKE_PREFIX_PATH ../../LIBS/PDCurses)
     find_path(PDCURSES_INCLUDES curses.h)
     find_library(PDCURSES_LIB NAMES pdcurses REQUIRED HINTS ${PDCURSES_INCLUDES}/wincon)
 endif()
