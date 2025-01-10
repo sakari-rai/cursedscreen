@@ -39,7 +39,7 @@ Run the program:
 
 ## Acknowledgements
 
-This program was the product of testing the free Github Copilot VSCode integration. It was fun and amazing.
+This program is a of testing the free Github Copilot VSCode integration. It was fun and amazing.
 
 ## License
 

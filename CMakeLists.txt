@@ -1,12 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
 
 project(cursedscreen VERSION 1.0)
- 
+
 # Specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 if(MSVC)
+    # TODO: make directory path to PDCurses on MSVC builds configurable.
     set(CMAKE_PREFIX_PATH ../../LIBS/PDCurses)
     find_path(PDCURSES_INCLUDES curses.h)
     find_library(PDCURSES_LIB NAMES pdcurses REQUIRED HINTS ${PDCURSES_INCLUDES}/wincon)
@@ -20,6 +21,3 @@ if(MSVC)
 else()
     target_link_libraries(cursedscreen PRIVATE ncurses)
 endif()
-
-
-
